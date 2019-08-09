@@ -3,13 +3,15 @@ package com.bae.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.bae.entity.User;
 import com.bae.repository.UserRepository;
 
-public class AuthUserServiceImpl implements AuthUserService{
-	
+@Service
+public class AuthUserServiceImpl implements AuthUserService {
+
 	private UserRepository repo;
 
 	@Autowired
@@ -19,13 +21,20 @@ public class AuthUserServiceImpl implements AuthUserService{
 
 	@Override
 	public User getUserByMemberNumber(String memberNumber) {
+		User user = new User((long) 0, "na", "na");
 		List<User> userList = repo.findAll();
-		for (int i=0 ; i<userList.size() ; i++) {
-			if(userList.get(i).getMemberNumber()==memberNumber) {
-				return userList.get(i);
+		for (int i = 0; i < userList.size(); i++) {
+			System.out.println(i);
+			System.out.println(userList.get(i).getMemberNumber());
+			System.out.println(memberNumber);
+			if ((String)userList.get(i).getMemberNumber() == memberNumber) {
+				System.out.println("if used");
+				user.setId(userList.get(i).getId());
+				user.setMemberNumber(userList.get(i).getMemberNumber());
+				user.setUsername(userList.get(i).getUsername());
 			}
 		}
-		return null;
+		return user;
 	}
 
 	@Override
