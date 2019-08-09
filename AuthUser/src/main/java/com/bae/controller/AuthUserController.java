@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bae.entity.User;
-import com.bae.service.AuthUserServiceIpml;
+import com.bae.service.AuthUserServiceImpl;
 
 @RestController
 public class AuthUserController {
 
-	private AuthUserServiceIpml service;
+	private AuthUserServiceImpl service;
 	@Autowired
-	public AuthUserController(AuthUserServiceIpml service) {
+	public AuthUserController(AuthUserServiceImpl service) {
 		this.service=service;
 	}
 	

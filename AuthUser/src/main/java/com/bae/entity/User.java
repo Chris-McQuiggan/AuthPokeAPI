@@ -1,4 +1,5 @@
 package com.bae.entity;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +11,9 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(name="memberNumber")
 	private String memberNumber;
+	@Column(name="userName")
 	private String username;
 	
 	public User() {
