@@ -1,5 +1,7 @@
 package com.bae.service;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,10 @@ public class LogService {
 	public void receiveAccount(AuthLog log) {
 		System.out.println("Received User Log:-  " + log.getUserID());
 		repo.save(log);
+	}
+	
+	public Collection<AuthLog> getAllLogs(){
+		return repo.findAll();
 	}
 
 }
