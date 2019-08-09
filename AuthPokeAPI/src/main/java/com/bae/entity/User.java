@@ -1,7 +1,6 @@
 package com.bae.entity;
-import javax.persistence.Entity;
 
-@Entity
+
 public class User {
 
 	private Long id;
