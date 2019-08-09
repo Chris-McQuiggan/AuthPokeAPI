@@ -46,11 +46,9 @@ public class AuthServiceIpml implements AuthService{
 
 	@Override
 	public Object searchPokeAPIName(String pokeName, Long userID) {
-		System.out.println("test 1");
 		AuthLog log = new AuthLog(userID, pokeName);
 		sendLog(log);
 		if(checkUser(userID)) {
-			System.out.println("test 2");
 			ResponseEntity<Object> exchangePoke = restTemplate.exchange(
 					"http://localhost:8082/getByName/"+pokeName,
 					HttpMethod.GET, null, Object.class);
