@@ -2,14 +2,12 @@ package com.bae;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.jms.annotation.EnableJms;
 
 @SpringBootApplication
-@EnableJms
-public class AuthPokeApiApplication {
+public class AuthLogApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AuthPokeApiApplication.class, args);
+		SpringApplication.run(AuthLogApplication.class, args);
 	}
 
 }

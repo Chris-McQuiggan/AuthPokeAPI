@@ -5,10 +5,10 @@ import com.bae.entity.User;
 
 public interface AuthService {
 
-	User getUser(Long userID);
+	User getUser(String memberNumber);
 	String createUser(User user);
-	String searchPokeAPIName(String poke);
-	String searchPokeAPIID(Long pokeID);
-	String sendLog(AuthLog log);
-	
+	Object searchPokeAPIName(String poke, Long userID);
+	Object searchPokeAPIID(String pokeID, Long userID);
+	void sendLog(AuthLog log);
+	Boolean checkUser(Long userID);
 }

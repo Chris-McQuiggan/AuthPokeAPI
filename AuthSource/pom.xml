@@ -9,20 +9,16 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bae</groupId>
-	<artifactId>AuthPokeAPI</artifactId>
+	<artifactId>AuthSource</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>AuthPokeAPI</name>
-	<description>Authenticator for the PokeAPI</description>
+	<name>AuthSource</name>
+	<description>User persistence</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -34,15 +30,10 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-activemq</artifactId>
 		</dependency>
 	</dependencies>
 
